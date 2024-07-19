@@ -1,19 +1,11 @@
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
 <pre id = 'write'></pre>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <script>
 
-$.ajax({ 
-    type: 'GET', 
-    url: 'http://185.112.101.121/', 
-    data: { get_param: 'value' }, 
-    dataType: 'json',
-    success: function (data) { 
-		document.getElementById("write").innerHTML = JSON.stringify(data);
-    }
+$.getJSON('http://185.112.101.121/', function(data) {
+    document.getElementById("write").innerHTML = JSON.stringify(data);
 });
 
 </script>
