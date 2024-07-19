@@ -1,1 +1,17 @@
-{"server":"185.102.136.231","server_port":"2323","password":"uY1a4n6VtKxrPOhZzT0XwX","method":"aes-192-gcm"}
+<pre id = 'write'></pre>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$.ajax({ 
+    type: 'GET', 
+    url: 'http://185.112.101.121/', 
+    data: { get_param: 'value' }, 
+    dataType: 'json',
+    success: function (data) { 
+		document.getElementById("write").innerHTML = JSON.stringify(data);
+    }
+});
+
+</script>
