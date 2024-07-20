@@ -1,20 +1,11 @@
 <pre id = 'write'></pre>
 
-
 <script>
-
-async function load()
-{
-	let response = await fetch("http://185.112.101.121/?id=1&pass=1");
-
-	if (response.ok) { // если HTTP-статус в диапазоне 200-299
-	  // получаем тело ответа (см. про этот метод ниже)
-	  let json = await response.json();
-	  document.getElementById("write").innerHTML = JSON.stringify(json);
-	} else {
-	  alert("Ошибка HTTP: " + response.status);
-	}
-}
-
-load();
+fetch('http://185.112.101.121/?id=1&pass=1')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    document.getElementById("write").innerHTML = JSON.stringify(data);
+  });
 </script>
